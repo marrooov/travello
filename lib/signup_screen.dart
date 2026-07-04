@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travello/signup_screen.dart';
+import 'package:travello/login_screen.dart';
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,26 +15,47 @@ class _LoginScreenState extends State<LoginScreen> {
               Image.asset('assets/icons/logo.png'),
               SizedBox(height: 40),
                Text(
-                  'Welcome Back!',
+                  'Get Started',
                   style: TextStyle(
-                    fontSize: 36,
+                    fontSize: 45,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                  Text(
-                  'sign in to access your account',
+                  'by creating a free account.',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 50),
                 Padding(
                   padding:  EdgeInsets.all(8.0),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Enter your email',
+                      hintText: 'Full Name',
+                      suffixIcon: Icon(Icons.person),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:  EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Valid Email',
                       suffixIcon: Icon(Icons.email),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:  EdgeInsets.all(8.0),
+                  child: TextField(
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Phone Number',
+                      suffixIcon: Icon(Icons.smartphone),
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -62,67 +77,50 @@ class _LoginScreenState extends State<LoginScreen> {
                     value: false,
                     onChanged: (value) {},
                   ),
-                  Text('Remember me'),
-                   const Spacer(),
-                   GestureDetector(
-                    onTap: () {
-                      // Handle forgot password
-                    },
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Color(0xFFFF3951),
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                    )
-                ],
-                ),
-              ],
-            ),
-          ),  
+                  Text('I agree to the terms and conditions'),
+                ]
+              ),
+            ],
+          ),
+        ),
       ),
-      bottomNavigationBar: 
-      Padding(
+      bottomNavigationBar: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(
-              onPressed: () {},
+            ElevatedButton(   
+              onPressed: () {
+                // Handle sign up
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFFF3951),
-                padding: EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
+                padding: EdgeInsets.symmetric(vertical: 15),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Next',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFFFFFFFF),
-                    ),
+                    style: TextStyle(fontSize: 24, color: Colors.white),
                   ),
                   SizedBox(width: 8),
                   Icon(Icons.arrow_forward, color: Colors.white),
                 ],
               ),
             ),
-            SizedBox(height: 8),
             TextButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
               child: Text(
-                'New Member? Register Now',
+                'Already have an account? Log In',
                 style: TextStyle(
                   color: Color(0xFFFF3951),
                   decoration: TextDecoration.underline,
@@ -131,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
-      )
+      ),
     );
   }
 }
