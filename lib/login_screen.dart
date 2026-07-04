@@ -62,12 +62,72 @@ class _LoginScreenState extends State<LoginScreen> {
                     onChanged: (value) {},
                   ),
                   Text('Remember me'),
+                   const Spacer(),
+                   GestureDetector(
+                    onTap: () {
+                      // Handle forgot password
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: Color(0xFFFF3951),
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                    )
                 ],
-                )
+                ),
               ],
             ),
           ),  
       ),
+      bottomNavigationBar: 
+      Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFFF3951),
+                padding: EdgeInsets.symmetric(vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Next',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Icon(Icons.arrow_forward, color: Colors.white),
+                ],
+              ),
+            ),
+            SizedBox(height: 8),
+            TextButton(
+              onPressed: () {
+                // Handle sign up
+              },
+              child: Text(
+                'Don\'t have an account? Sign Up',
+                style: TextStyle(
+                  color: Color(0xFFFF3951),
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+          ],
+        ),
+      )
     );
   }
 }
