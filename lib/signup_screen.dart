@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travello/home_screen.dart';
 import 'package:travello/login_screen.dart';
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -91,7 +92,10 @@ class SignUpScreen extends StatelessWidget {
           children: [
             ElevatedButton(   
               onPressed: () {
-                // Handle sign up
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFFF3951),
