@@ -13,7 +13,7 @@ int currentIndex = 0;
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text('Home'),
+          child: Text('Welcome to the Home Screen!'),
         ),
       ),
     bottomNavigationBar: BottomNavigationBar(
