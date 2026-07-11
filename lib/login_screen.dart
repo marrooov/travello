@@ -66,13 +66,15 @@ class _LoginScreenState extends State<LoginScreen> {
                    const Spacer(),
                    GestureDetector(
                     onTap: () {
-                      // Handle forgot password
                     },
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Color(0xFFFF3951),
-                        decoration: TextDecoration.underline,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: Color(0xFFFF3951),
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                     )
